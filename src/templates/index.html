@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for entry in entries %}
+    {{ entry['timestamp'] }}
+    <a href="{{ url_for('index_blueprint.entry', entry_name=entry['name']) }}">[Link]</a>
+    <br>
+    <pre>
+    {{ entry['text'] | markdown }}
+    </pre>
+    <hr>
+{% endfor %}
+
+<style>
+    pre {
+        font-family: "Times New Roman", Times, serif;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{ entry['timestamp'] }}
+<br>
+<pre>
+{{ entry['text'] | markdown }}
+</pre>
+
+<style>
+pre {
+    font-family: "Times New Roman", Times, serif;
+}
+</style>
+
+{% endblock %}
